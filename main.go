@@ -36,6 +36,7 @@ func main() {
 	defer embd.CloseGPIO()
 
 	for _, v := range lights {
+		log.Printf("Init light: %d\n", v)
 		pin, err := embd.NewDigitalPin(v)
 		if err != nil {
 			log.Fatal(err)
